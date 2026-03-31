@@ -58,18 +58,21 @@ int insertnode(node* L, int pos, elemtype e){
 }
 
 int delenode(node* L, int pos){
+    if(pos<1) return 0;
     node*p = L;
     for (int i = 0; i < pos-1; i++){
         p = p->next;
-        if (p->next == NULL){
+        if (p == NULL){
             printf("删除位置超出范围\n");
             return 0;
         }
     }
-    node*q = p->next;
-    if(q == NULL){
+
+    if(p->next == NULL){
         printf("删除位置超出范围\n");
+        return 0;
     }
+    node*q = p->next;
     p->next = q->next;
     free(q);
     return 1;
@@ -102,6 +105,6 @@ int main(){
     insertnode(list,6,666);
     listnode(list);
 
-    delenode(list,4);
+    delenode(list,9);
     listnode(list);
 }
