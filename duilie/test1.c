@@ -35,17 +35,17 @@ int queuefull(queue *q){
         }
         q->front = 0;
         q->rear = q->rear-step;
-        return 1;
+        return 0;
     }
     else{
         printf("真已满\n");
-        return 0;
+        return 1;
     }
 }
 
-int equeue(queue *q, elemtype e){
+int enqueue(queue *q, elemtype e){
     if(q->rear >= MAXSIZE) {
-        if(!queuefull(q)){           //若无法移动
+        if(queuefull(q)){           //若无法移动
             printf("已满\n");
             return 0;
         }
