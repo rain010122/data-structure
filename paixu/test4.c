@@ -26,6 +26,7 @@ void selectsort(int *data, int len){
 int main(){
     int data[] = {47,35,60,94,7,15,28};
     int len = sizeof(data)/sizeof(data[0]);
+    printf("%d\n",len);
     selectsort(data,len);
     for (int i = 0; i<len; i++){
         printf("%d ",data[i]);

@@ -129,7 +129,7 @@ int findnode(node* L, int k){
 }
 
 node* findpositionnode(node* head1,node* head2){
-    if (head1 == NULL || head2 == NULL) return 0;
+    if (head1 == NULL || head2 == NULL) return NULL;
     int len1 = 0;
     int len2 = 0;
     node* p = head1;
